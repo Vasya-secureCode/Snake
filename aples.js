@@ -1,7 +1,7 @@
 function setApple(m) {
 	var that = this;
-	that.positionR;
-	that.positionC;
+	that.positionR = 3;
+	that.positionC = 3;
 	
 	that.create = function() {
 		var cell;

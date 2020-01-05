@@ -17,15 +17,12 @@ window.onload = function()
 	    	case 37:
 	    		square.course = 'left';
 	    		break;
-    
 	    	case 38:
 	    		square.course = 'up';
 	    		break;
-    
 	    	case 39:
 	    		square.course = 'right';
 	    		break;
-    
 	    	case 40:
 	    		square.course = 'down';
 	    		break; 
@@ -37,17 +34,15 @@ window.onload = function()
 	function gameplay() {
         if (square.alive) {
 			square.move();
-			if (square.nyam) {
-				square.nyam = false;
+			if (square.nyam == 'eat') {
+				square.nyam = 'null';
 				aples.create();
 			}
 		} else {
-		  alert('Game over');
-		  m1.create();
-		  square.body[0] = 10; square.body[1] = 10;
-		  m1.setCell(square.body[0], square.body[1], true);
-		  square.alive = true;
-		  aples.create();
+		    alert('Game over');
+		    m1.create();
+		    square.create();
+		    aples.create();
 		}
 	}
 }		

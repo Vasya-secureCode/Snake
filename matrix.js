@@ -17,15 +17,22 @@ function Matrix(containerId, rows, cols)
 			matrix.appendChild(div);
 		}
 	}
+
 	this.getCell = function(row, col)
 	{
 		var ind = (row - 1) * this.cols + col - 1;
 		var matrix = document.getElementById(this.containerId);
 		var cell = matrix.children[ind];
 		if (cell.className == 'cell cellcolor') {
-			return true;
-		} else {
-			return false;
+			return 'eat';
+		}
+
+		if (cell.className == 'cell on') {
+			return 'bite';
+		} 
+
+		if (cell.className == 'cell') {
+			return 'null';
 		} 
 	}
 
